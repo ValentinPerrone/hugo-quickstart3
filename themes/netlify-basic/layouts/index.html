@@ -103,13 +103,16 @@
   </div>
   <div>
   Visitors: <span id="counter">Loading...</span>
-</div>
 
 <script>
 fetch("https://waei6ftr9f.execute-api.us-east-1.amazonaws.com")
   .then(res => res.json())
   .then(data => {
     document.getElementById("counter").innerText = data.count;
+  })
+  .catch(err => {
+    console.error(err);
+    document.getElementById("counter").innerText = "Error";
   });
 </script>
 </div>
