@@ -31,7 +31,7 @@
 
 <div id="content">
   <div class="header">
-    <h1>Your Name</h1>
+    <h1>Valentin Perrone</h1>
     <h2>Web Developer | Cloud Enthusiast | Portfolio</h2>
     <p>
       Welcome to my curriculum vitae website. Explore my experience, skills, and projects.
@@ -101,6 +101,17 @@
       <li>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
     </ul>
   </div>
+  <div>
+  Visitors: <span id="counter">Loading...</span>
+</div>
+
+<script>
+fetch("https://abc123.execute-api.us-east-1.amazonaws.com/counter")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("counter").innerText = data.count;
+  });
+</script>
 </div>
 
 {{ end }}
